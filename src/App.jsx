@@ -1,26 +1,32 @@
 import "./App.css";
-import { Name } from "./components/name.component";
+import { ProductList } from "./components/productList.component";
+
+const temp = [
+  {
+    name: "name 1",
+    price: 400,
+    image:
+      "https://media.istockphoto.com/id/637696304/photo/patan.jpg?s=2048x2048&w=is&k=20&c=8Y2YB8oWnPb17Gl2dIKjm7GanOtnC2OSWLPrIUmnGuQ=",
+  },
+  {
+    name: "name 2",
+    price: 500,
+    image:
+      "https://media.istockphoto.com/id/637696304/photo/patan.jpg?s=2048x2048&w=is&k=20&c=8Y2YB8oWnPb17Gl2dIKjm7GanOtnC2OSWLPrIUmnGuQ=",
+  },
+  {
+    name: "name 3",
+    price: 600,
+    image:
+      "https://media.istockphoto.com/id/637696304/photo/patan.jpg?s=2048x2048&w=is&k=20&c=8Y2YB8oWnPb17Gl2dIKjm7GanOtnC2OSWLPrIUmnGuQ=",
+  },
+];
 
 function App() {
-  const names = [
-    {
-      name: "ram",
-    },
-    {
-      name: "hari",
-    },
-    {
-      name: "sita",
-    },
-    {
-      name: "kai",
-    },
-  ];
-
   return (
-    <div>
-      {names.map((item, index) => (
-        <Name key={index} name={item.name} />
+    <div className="test">
+      {temp.map((a, r) => (
+        <ProductList key={r} products={a} />
       ))}
     </div>
   );
