@@ -1,4 +1,5 @@
 import "./App.css";
+import Lifecycle from "./components/lifecycle.component";
 import { ProductList } from "./components/productList.component";
 
 const temp = [
@@ -25,9 +26,7 @@ const temp = [
 function App() {
   return (
     <div className="test">
-      {temp.map((a, r) => (
-        <ProductList key={r} products={a} />
-      ))}
+      <Lifecycle />
     </div>
   );
 }
