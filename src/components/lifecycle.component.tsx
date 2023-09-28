@@ -2,12 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./card";
 
 function Lifecycle() {
-  const [name, setName] = useState("");
   const [data, setData] = useState(null);
-
-  //Promise asnc , await
-  // reject , resolve
-  // callback hell
 
   const getData = async () => {
     //get method
