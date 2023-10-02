@@ -1,12 +1,17 @@
-import React from "react";
+import { useContext } from "react";
+import { AppContext } from "../App";
 
-const Card = ({ data }) => {
+const Card = () => {
+  const contextData = useContext(AppContext);
+
+  console.log(contextData);
+
   return (
-    <div className="cardContainer">
-      <img className="cardImage" src={data.image} />
-      <p className="cardPrice">{data.price}</p>
-      <p className="cardTitle">{data.title}</p>
-      {/* <p className="cardDesc">{data.description}</p> */}
+    <div>
+      {contextData.count}
+      <button onClick={() => contextData.setCount((prev) => prev + 1)}>
+        Click
+      </button>
     </div>
   );
 };

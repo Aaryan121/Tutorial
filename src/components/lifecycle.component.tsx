@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "./card";
+import style from "./lifecycle.module.css";
 
 function Lifecycle() {
   const [data, setData] = useState(null);
@@ -18,7 +19,7 @@ function Lifecycle() {
   }, []);
 
   return (
-    <div className="wrapper">
+    <div className={style.wrapper}>
       {data?.map((item) => (
         <Card key={item.id} data={item} />
       ))}

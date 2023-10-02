@@ -1,16 +1,22 @@
+import { createContext, useState } from "react";
 import "./App.css";
-import styles from "./app.module.css";
+import Card from "./components/card";
+
+const InitialState = {
+  count: 0,
+  sum: 0,
+};
+
+export const AppContext = createContext(InitialState);
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [sum, setSum] = useState(0);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.child}>1</div>
-      <div className={styles.child}>2</div>
-      <div className={styles.child}>3</div>
-      <div className={styles.child}>4</div>
-      <div className={styles.child}>5</div>
-      <div className={styles.child}>6</div>
-    </div>
+    <AppContext.Provider value={{ count, sum, setCount, setSum }}>
+      <Card />
+    </AppContext.Provider>
   );
 }
 
